@@ -1,0 +1,23 @@
+.form-group button{
+    margin-top: 20px ;
+    margin-right: 20px;
+}
+#output{
+    margin-top: 30px;
+}
+#input textarea.form-control,
+#output textarea.form-control {
+  width: 100%; /* Adjust the width as per your requirement */
+}
+.preview{
+  margin-top: 30px;
+}
+.preview b{
+  font-size: large;
+}
+@media(min-width:992px){
+  #input textarea.form-control,
+#output textarea.form-control {
+  width: 80%; /* Adjust the width as per your requirement */
+}
+}

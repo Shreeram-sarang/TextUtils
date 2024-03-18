@@ -1,0 +1,7 @@
+
+@media (min-width: 992px) {
+    /* Adjust the position of the search box for large screens */
+    .navbar-nav {
+      flex-direction: row; /* Ensure the navbar items are in a row */
+    }
+  }
