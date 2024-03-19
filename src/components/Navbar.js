@@ -1,43 +1,43 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import './Navbar.css'
-// import { Router,link } from 'react-router-dom'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Navbar.css';
 
+export default function Navbar(props) {
+  return (
+    <>
+      <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+        <a className="navbar-brand" href="#">Navbar</a>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-export default function Navbar(props){
-    return (    
-      <>  
-      <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`} >
-        <div className="container-fluid">
-          <a className="navbar-brand" href="/">{props.title}</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">{props.about}</a>
-              </li>
-            </ul>
-            <div class="form-check form-switch d-flex ms-auto">
-              <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.changeMode} style={{ backgroundColor: props.mode=='dark' ? 'black' : 'white' }}/>
-              <label className="form-check-label" for="flexSwitchCheckDefault" style={{ marginLeft: "10px",color:'grey' }}>Mode</label>
-            </div>
-
-          </div>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item active">
+              <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">About Us</a>
+            </li>
+          </ul>
+          <label className="cl-switch my-2 my-lg-0">
+            <input type="checkbox" onClick={props.changeMode} />
+            <span className='text-secondary'>mode</span>
+          </label>
         </div>
       </nav>
-      </> 
-    )
+    </>
+  )
 }
-Navbar.propTypes={
-    title:PropTypes.string.isRequired,
-    about:PropTypes.string.isRequired
+
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+  about: PropTypes.string.isRequired,
+  mode: PropTypes.string.isRequired,
+  changeMode: PropTypes.func.isRequired
 }
-Navbar.defaultProps={
-    title:'set title',
-    about:'about'
+
+Navbar.defaultProps = {
+  title: 'set title',
+  about: 'about'
 }

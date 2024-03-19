@@ -11,14 +11,16 @@ function App() {
 
   const handleModeChange = () => {
     if (mode === 'light') {
+      document.body.style.transition = 'background-color 0.3s ease'; // Add transition
       changeMode('dark');
       document.body.style.backgroundColor = '#090125';
     } else {
+      document.body.style.transition = 'background-color 0.3s ease'; // Add transition
       changeMode('light');
       document.body.style.backgroundColor = 'white';
     }
   };
-
+  
   const triggerAlert = (msg) => {
     changeMsg(msg);
     changeAlertstate(true);

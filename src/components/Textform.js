@@ -43,7 +43,7 @@ export default function Textform(props) {
   };
 
   const countWords=(abc)=>{
-    let count=0
+    let count=1
     if (countChar(abc)===0)
     return 0
     for (let i=1;i<abc.length;i++){
