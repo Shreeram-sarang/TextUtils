@@ -3,6 +3,8 @@ import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Alert from './components/Alert';
 import AboutUs from './components/AboutUs';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Contact from './components/Contact';
 
 function App() {
   const [mode, changeMode] = useState('light');
@@ -28,14 +30,17 @@ function App() {
   };
 
   return (
-    <div>
-      <Navbar title="TextUtils" about="About" changeMode={handleModeChange} mode={mode} />
-      {alertState && <Alert msg={msg} />}
-      <div className="container">
-        <Textform mode={mode} triggerAlert={triggerAlert} />
+    <Router>
+      <div>
+        <Navbar title="TextUtils" about="About" changeMode={handleModeChange} mode={mode} />
+        {alertState && <Alert msg={msg} />}
+        <Routes>
+          <Route path="/" element={<div className="container"><Textform mode={mode} triggerAlert={triggerAlert} /></div>} />
+          <Route path="/aboutus" element={<AboutUs mode={mode} />} />
+          <Route path='/contact' element=<Contact mode={mode}/>/>
+        </Routes>
       </div>
-      {/* <AboutUs mode={mode} /> */}
-    </div>
+    </Router>
   );
 }
 

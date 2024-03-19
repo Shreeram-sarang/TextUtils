@@ -1,5 +1,6 @@
 import React from 'react'
 import './AbotUs.css'
+import {Link} from 'react-router-dom'
 
 export default function AboutUs(props) {
   return (
@@ -20,7 +21,7 @@ export default function AboutUs(props) {
         <p className="title">Art Director</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
         <p>mike@example.com</p>
-        <p><button className="button">Contact</button></p>
+        <Link to='/contact'><p><button className="button" >Contact</button></p></Link>
       </div>
     </div>
   </div>
